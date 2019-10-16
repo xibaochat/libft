@@ -1,52 +1,74 @@
 #include "libft.h"
 
-int			get_new_str_lens(char *s1, char *sep)
+int char_in_set(char c, char *set)
 {
-	int		i;
-	int		j;
-	int		lens;
+	int i;
 
 	i = 0;
-	lens = 0;
-	while (s1[i])
+	while (set[i])
 	{
-		j = 0;
-		while (sep[j] && s1[i] != sep[j])
-			j++;
-		if (!sep[j])
-			lens++;
+		if (c == set[i])
+			return (1);
 		i++;
 	}
-	return (lens);
+	return (0);
+}
+
+
+int get_starting_index(char *str, char *set)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!char_in_set(str[i], set))
+			return (i);
+		i++;
+	}
+	return (i);
+}
+
+int		get_end_start(char *str, char *set)
+{
+	int lens;
+	int i;
+
+	i = 0;
+	lens = ft_strlen(str);
+	while (str[--lens])
+	{
+		if (!char_in_set(str[lens], set))
+			return (lens);
+	}
 }
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	char	*sep;
-	char	*new_str;
-	int		lens;
-	int		i;
-	int		j;
-	int		k;
+	int start;
+	int end;
+	int i;
+	char *ptr;
 
-	str = (char *)s1;
-	sep = (char *)set;
-	if (!str || !sep)
+
+	start = get_starting_index((char *)s1, (char *)set);
+	end = get_end_start((char *)s1, (char *)set);
+	if (!(ptr = (char *)malloc(sizeof(char) * (end - start + 2))))
 		return (NULL);
-	lens = get_new_str_lens(str, sep);
-	new_str = (char *)malloc(lens + 1);
-	new_str[lens] = '\0';
 	i = 0;
-	k = 0;
-	while (str[i])
-	{
-		j = 0;
-		while (sep[j] && str[i] != sep[j])
-			j++;
-		if (!sep[j])
-			new_str[k++] = str[i];
-		i++;
-	}
-	return (new_str);
+	while (start <= end)
+		ptr[i++] = s1[start++];
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+#include <stdio.h>
+int main()
+{
+	char    *s1 = "Hello \t  Please\n Trim me !";
+	char    *s2 = "Hello \t  Please\n Trim me !";
+	char *ptr = ft_strtrim(s1, s2);
+
+	printf("%s",ptr);
+	return 0;
 }

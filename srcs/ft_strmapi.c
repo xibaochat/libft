@@ -3,16 +3,23 @@
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
+	char			*ptr;
 	unsigned int	i;
+	unsigned int	lens;
 
 	str = (char *)s;
 	if (!s || !f)
-		return (str);
+		return (NULL);
 	i = 0;
-	while (i < ft_strlen(str))
+	lens = ft_strlen(str);
+	ptr = (char *)malloc(sizeof(char) * (lens + 1));
+	if (!ptr)
+		return (NULL);
+	ptr[lens] = '\0';
+	while (i < lens)
 	{
-		(*f)(i, str[i]);
+		ptr[i] = (*f)(i, str[i]);
 		i++;
 	}
-	return (str);
+	return (ptr);
 }
