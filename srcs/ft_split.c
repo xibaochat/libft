@@ -21,7 +21,7 @@ int			ger_nb_words(char *str, char c)
 	return (c);
 }
 
-int			get_lens(char *str, int i, char c)
+int			custom_get_lens(char *str, int i, char c)
 {
 	int		lens;
 
@@ -50,7 +50,7 @@ char		**get_tab(char **arr, char *str, char c)
 			i++;
 		if (str[i] && !is_sep(str[i], c))
 		{
-			lens = get_lens(str, i, c);
+			lens = custom_get_lens(str, i, c);
 			arr[j] = (char *)malloc(lens + 1);
 			while (str[i] && !is_sep(str[i], c))
 				arr[j][k++] = str[i++];

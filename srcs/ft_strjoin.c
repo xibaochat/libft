@@ -1,15 +1,5 @@
 #include "libft.h"
 
-int			get_lens(char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 char		*manage_empty_str(char *s1, char *s2)
 {
 	char *s;
@@ -38,7 +28,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	str2 = (char *)s2;
 	if (!str1 || !str2)
 		return(manage_empty_str(str1, str2));
-	total_lens = get_lens(str1) + get_lens(str2);
+	total_lens = ft_strlen(str1) + ft_strlen(str2);
 	str = (char *)malloc((total_lens + 1) * sizeof(char));
 	if (!str)
 		return (NULL);

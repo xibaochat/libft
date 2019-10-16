@@ -1,15 +1,5 @@
 #include "libft.h"
 
-unsigned int 		get_lens(char *s)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
@@ -19,7 +9,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return (str);
 	i = 0;
-	while (i < get_lens(str))
+	while (i < ft_strlen(str))
 	{
 		(*f)(i, str[i]);
 		i++;

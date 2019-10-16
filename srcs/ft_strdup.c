@@ -1,16 +1,6 @@
 #include "libft.h"
 
-size_t		get_lens(char *s)
-{
-	size_t i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-char		*strdup(const char *s)
+char		*ft_strdup(const char *s)
 {
 	size_t	lens;
 	size_t	i;
@@ -19,7 +9,10 @@ char		*strdup(const char *s)
 
 	i = 0;
 	s1 = (char *)s;
+	lens = ft_strlen(s1);
 	str = (char *)malloc(lens + 1);
+	if (!str)
+		return (NULL);
 	while (i < lens)
 	{
 		str[i] = s1[i];

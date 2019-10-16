@@ -1,15 +1,5 @@
 #include "libft.h"
 
-size_t		get_lens(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
 
@@ -21,8 +11,8 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	j = 0;
-	dest_lens = get_lens(dst);
-	src_lens = get_lens((char *)src);
+	dest_lens = ft_strlen(dst);
+	src_lens = ft_strlen((char *)src);
 	meme = size;
 	while (dst[i] && size)
 	{

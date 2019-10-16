@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int is_space(char c)
 {
 	return ((c >= 9 && c <= 13) || c == ' ');
@@ -13,7 +15,7 @@ int get_start_index(char *str)
 	return (i);
 }
 
-int ft_atoi(char *str)
+int  ft_atoi(char *str)
 {
 	int sign;
 	int res;
