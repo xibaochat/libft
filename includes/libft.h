@@ -6,12 +6,12 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 16:57:30 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 16:58:34 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/17 20:35:23 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LUBFT_H
+# define LIBFT_H
 
 #include <stdlib.h>
 #include <string.h>
