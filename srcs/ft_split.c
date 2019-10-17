@@ -1,10 +1,5 @@
 #include "libft.h"
 
-int			is_sep(char a, char b)
-{
-	return (a == b);
-}
-
 int			ger_nb_words(char *str, char c)
 {
 	int		i;
@@ -14,19 +9,19 @@ int			ger_nb_words(char *str, char c)
 	nb_words = 0;
 	while (str[i])
 	{
-		if ((!i && !is_sep(str[i], c)) || (i > 0 && is_sep(str[i - 1], c) && !is_sep(str[i], c)))
+		if ((!i && (str[i] != c)) || (i > 0 && (str[i - 1] == c) && (str[i] != c)))
 			nb_words++;
 		i++;
 	}
 	return (c);
 }
 
-int			custom_get_lens(char *str, int i, char c)
+int			get_lens(char *str, int i, char c)
 {
 	int		lens;
 
 	lens = 0;
-	while (str[i] && !is_sep(str[i], c))
+	while (str[i] && (str[i] != c))
 	{
 		i++;
 		lens++;
@@ -46,13 +41,13 @@ char		**get_tab(char **arr, char *str, char c)
 	while (str[i])
 	{
 		k = 0;
-		while (str[i] && is_sep(str[i], c))
+		while (str[i] && (str[i] == c))
 			i++;
-		if (str[i] && !is_sep(str[i], c))
+		if (str[i] && (str[i] != c))
 		{
-			lens = custom_get_lens(str, i, c);
+			lens = get_lens(str, i, c);
 			arr[j] = (char *)malloc(lens + 1);
-			while (str[i] && !is_sep(str[i], c))
+			while (str[i] && (str[i] != c))
 				arr[j][k++] = str[i++];
 			arr[j][k] = '\0';
 			arr[++j] = NULL;

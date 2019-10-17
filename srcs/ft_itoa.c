@@ -1,5 +1,24 @@
 #include "libft.h"
 
+int					get_size(int n)
+{
+	int				size;
+
+	size = 1;
+	if (n < 0)
+	{
+		size++;
+		n = -n;
+	}
+	while (n > 10)
+	{
+		size++;
+		n = n / 10;
+	}
+	return (size);
+}
+
+
 char				*get_converted_str(char *str, unsigned int res, int *i)
 {
 	if (res >= 10)
@@ -16,7 +35,8 @@ char				*ft_itoa(int n)
 
 	i = 0;
 	res = n;
-	str = (char *)malloc(35);
+	if (!(str = (char *)malloc(get_size(n) + 1)))
+		return (NULL);
 	if (n < 0)
 	{
 		str[i++] = '-';
