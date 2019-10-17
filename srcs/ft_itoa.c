@@ -6,7 +6,7 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:06:35 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:06:39 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/17 23:53:00 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,31 @@ char	*ft_itoa(int n)
 	str[i] = '\0';
 	return (str);
 }
+
+/*
+void ft_print_result(char const *s)
+{
+	int len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	write(1, s, len);
+	write(1, "\n", 1);
+}
+
+int main(void)
+{
+	ft_print_result(ft_itoa(0));
+	ft_print_result(ft_itoa(9));
+	ft_print_result(ft_itoa(-9));
+	ft_print_result(ft_itoa(10));
+	ft_print_result(ft_itoa(-10));
+	ft_print_result(ft_itoa(8124));
+	ft_print_result(ft_itoa(-9874));
+	ft_print_result(ft_itoa(543000));
+	ft_print_result(ft_itoa(-2147483648LL));
+	ft_print_result(ft_itoa(2147483647));
+	return (0);
+}
+*/

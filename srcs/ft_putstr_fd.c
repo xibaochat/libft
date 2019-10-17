@@ -6,7 +6,7 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:26:51 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:26:52 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/17 21:30:35 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,6 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, s + i, 1);
-		i++;
-	}
-
+	if (s && fd > 0)
+		write(fd, s, ft_strlen(s));
 }

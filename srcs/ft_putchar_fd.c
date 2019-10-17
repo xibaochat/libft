@@ -6,7 +6,7 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:26:13 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:26:18 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/17 21:29:34 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, fd);
+	write(fd, &c, 1);
 }

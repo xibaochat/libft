@@ -6,11 +6,23 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:29:57 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:29:58 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/17 23:00:21 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char *empty_string(void)
+{
+	char *p;
+
+	p = (char *)malloc(sizeof(char));
+	if (!p)
+		return (NULL);
+	p[0] = '\0';
+	return (p);
+}
+
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -18,9 +30,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char			*sub_str;
 	unsigned int	i;
 
-
 	i = 0;
 	str = (char *)s;
+	if (start >= (unsigned int)ft_strlen(str))
+		return (empty_string());
 	sub_str = (char *)malloc((len + 1) * sizeof(char));
 	if (!s || !sub_str)
 		return (NULL);

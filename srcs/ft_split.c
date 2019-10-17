@@ -6,7 +6,7 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:27:03 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:27:04 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/17 23:25:34 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ char		**empty_arr(void)
 {
 	char	**res;
 
-	res = (char **)malloc(2 * sizeof(char *));
-	res[0] = "";
-	res[1] = NULL;
+	res = (char **)malloc(sizeof(char *));
+//	res[0] = 0;
+	res[0] = NULL;
 	return (res);
 }
 
@@ -87,8 +87,8 @@ char		**ft_split(char const *s, char c)
 
 	str = (char *)s;
 	arr = NULL;
-	if (!str)
-		return (NULL);
+	if (!str || !str[0])
+		return (empty_arr());
 	words_nb = ger_nb_words(str, c);
 	if (!words_nb)
 		return (empty_arr());
