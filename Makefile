@@ -6,10 +6,11 @@
 #    By: xwang <xwang@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 16:53:51 by xwang             #+#    #+#              #
-#    Updated: 2019/10/17 17:04:41 by xinwang          ###   ########.fr        #
+#    Updated: 2019/10/17 20:02:57 by xinwang          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
+NAME = libft.a
 STATIC_LIB = libft.a
 DYNAMIC_LIB = libft.so
 
@@ -39,7 +40,9 @@ COMPILE_FLAGS = -Wall -Wextra -Werror
 
 all: $(STATIC_LIB)
 
-$(STATIC_LIB) : $(OBJ)
+#${NAME}: $(STATIC_LIB)
+
+$(NAME): $(OBJ)
 	@ gcc ${COMPILE_FLAG} -I $(HEADER_DIR) -c $(SRC_PATH)
 	@ ar rcs $(STATIC_LIB) $(SRCO)
 
