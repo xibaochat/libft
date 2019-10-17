@@ -1,4 +1,17 @@
-NAME = libft.a
+#******************************************************************************#
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: xwang <xwang@student.42.fr>                +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/10/17 16:53:51 by xwang             #+#    #+#              #
+#    Updated: 2019/10/17 17:04:41 by xinwang          ###   ########.fr        #
+#                                                                              #
+#******************************************************************************#
+
+STATIC_LIB = libft.a
+DYNAMIC_LIB = libft.so
 
 SRC = ft_atoi.c        ft_lstlast.c   ft_split.c \
 	ft_bzero.c         ft_lstmap.c      ft_strchr.c \
@@ -22,19 +35,24 @@ SRCO = $(SRC:.c=.o)
 
 HEADER_DIR = includes
 
-all:
-	@ gcc -I $(HEADER_DIR) -c $(SRC_PATH)
-	@ ar rcs $(NAME) $(SRCO)
+COMPILE_FLAGS = -Wall -Wextra -Werror
+
+all: $(STATIC_LIB)
+
+$(STATIC_LIB) : $(OBJ)
+	@ gcc ${COMPILE_FLAG} -I $(HEADER_DIR) -c $(SRC_PATH)
+	@ ar rcs $(STATIC_LIB) $(SRCO)
 
 so:
 	@ gcc -I $(HEADER_DIR) -fPIC -c $(SRC_PATH)
-	@ cc -shared -Wl,-soname,libft.so -o libft.so *.o
+	@ cc -shared -Wl,-soname,$(DYNAMIC_LIB) -o $(DYNAMIC_LIB) *.o
 
 
 clean:
 	@ rm -f $(SRCO)
 
 fclean: clean
-	@ rm -f $(NAME)
+	@ rm -f $(STATIC_LIB)
+	@ rm -f $(DYNAMIC_LIB)
 
 re: fclean all

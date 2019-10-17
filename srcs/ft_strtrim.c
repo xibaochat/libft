@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/17 18:29:43 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/17 18:29:47 by xinwang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int char_in_set(char c, char *set)
@@ -13,7 +25,6 @@ int char_in_set(char c, char *set)
 	}
 	return (0);
 }
-
 
 int get_starting_index(char *str, char *set)
 {
@@ -32,15 +43,12 @@ int get_starting_index(char *str, char *set)
 int		get_end_start(char *str, char *set)
 {
 	int lens;
-	int i;
 
-	i = 0;
 	lens = ft_strlen(str);
 	while (str[--lens])
-	{
 		if (!char_in_set(str[lens], set))
 			return (lens);
-	}
+	return (0);
 }
 
 char		*ft_strtrim(char const *s1, char const *set)
@@ -60,15 +68,4 @@ char		*ft_strtrim(char const *s1, char const *set)
 		ptr[i++] = s1[start++];
 	ptr[i] = '\0';
 	return (ptr);
-}
-
-#include <stdio.h>
-int main()
-{
-	char    *s1 = "Hello \t  Please\n Trim me !";
-	char    *s2 = "Hello \t  Please\n Trim me !";
-	char *ptr = ft_strtrim(s1, s2);
-
-	printf("%s",ptr);
-	return 0;
 }

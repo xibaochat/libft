@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/17 18:29:06 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/17 18:29:07 by xinwang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char			*ft_strnstr(const char	*str, const char	*to_find, size_t	len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 		size_t	i;
 		size_t	j;

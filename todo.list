@@ -26,3 +26,6 @@ strchr
 strnstr
 calloc
 strdup
+
+
+Compile with flags: -Wall -Wextra -Werror

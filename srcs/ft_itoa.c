@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/17 18:06:35 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/17 18:06:39 by xinwang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-int					get_size(int n)
+int		get_size(int n)
 {
 	int				size;
 
@@ -19,7 +31,7 @@ int					get_size(int n)
 }
 
 
-char				*get_converted_str(char *str, unsigned int res, int *i)
+char	*get_converted_str(char *str, unsigned int res, int *i)
 {
 	if (res >= 10)
 		get_converted_str(str, res / 10, i);
@@ -27,7 +39,7 @@ char				*get_converted_str(char *str, unsigned int res, int *i)
 	return (str);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int				i;
 	unsigned int	res;

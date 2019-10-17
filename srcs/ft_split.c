@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/17 18:27:03 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/17 18:27:04 by xinwang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int			ger_nb_words(char *str, char c)
@@ -9,7 +21,8 @@ int			ger_nb_words(char *str, char c)
 	nb_words = 0;
 	while (str[i])
 	{
-		if ((!i && (str[i] != c)) || (i > 0 && (str[i - 1] == c) && (str[i] != c)))
+		if ((!i && (str[i] != c)) ||
+			(i > 0 && (str[i - 1] == c) && (str[i] != c)))
 			nb_words++;
 		i++;
 	}
@@ -56,7 +69,7 @@ char		**get_tab(char **arr, char *str, char c)
 	return (arr);
 }
 
-char		**empty_arr()
+char		**empty_arr(void)
 {
 	char	**res;
 

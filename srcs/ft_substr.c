@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/17 18:29:57 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/17 18:29:58 by xinwang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char				*ft_substr(char const	*s, unsigned int	start,size_t	len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
 	char			*sub_str;

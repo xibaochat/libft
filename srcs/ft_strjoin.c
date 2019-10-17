@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/17 18:27:38 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/17 18:27:40 by xinwang          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char		*manage_empty_str(char *s1, char *s2)
@@ -27,7 +39,7 @@ char		*ft_strjoin(char const *s1, char const *s2)
 	str1 = (char *)s1;
 	str2 = (char *)s2;
 	if (!str1 || !str2)
-		return(manage_empty_str(str1, str2));
+		return (manage_empty_str(str1, str2));
 	total_lens = ft_strlen(str1) + ft_strlen(str2);
 	str = (char *)malloc((total_lens + 1) * sizeof(char));
 	if (!str)
