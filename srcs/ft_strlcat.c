@@ -6,7 +6,7 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:27:52 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:27:53 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:16:54 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,13 @@ size_t		ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
+	i = -1;
 	j = 0;
 	dest_lens = ft_strlen(dst);
 	src_lens = ft_strlen((char *)src);
 	meme = size;
-	while (dst[i] && size)
-	{
-		i++;
+	while (dst[++i] && size)
 		size--;
-	}
 	if (!size)
 		return (meme + src_lens);
 	while (src[j] && size > 1)

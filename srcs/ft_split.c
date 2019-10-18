@@ -6,16 +6,16 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:27:03 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 23:25:34 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:06:12 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ger_nb_words(char *str, char c)
+static int		ger_nb_words(char *str, char c)
 {
-	int		i;
-	int		nb_words;
+	int			i;
+	int			nb_words;
 
 	i = 0;
 	nb_words = 0;
@@ -29,9 +29,9 @@ int			ger_nb_words(char *str, char c)
 	return (c);
 }
 
-int			get_lens(char *str, int i, char c)
+static int		get_lens(char *str, int i, char c)
 {
-	int		lens;
+	int			lens;
 
 	lens = 0;
 	while (str[i] && (str[i] != c))
@@ -42,12 +42,12 @@ int			get_lens(char *str, int i, char c)
 	return (lens);
 }
 
-char		**get_tab(char **arr, char *str, char c)
+char			**get_tab(char **arr, char *str, char c)
 {
-	int		i;
-	int		j;
-	int		k;
-	int		lens;
+	int			i;
+	int			j;
+	int			k;
+	int			lens;
 
 	i = 0;
 	j = 0;
@@ -69,21 +69,20 @@ char		**get_tab(char **arr, char *str, char c)
 	return (arr);
 }
 
-char		**empty_arr(void)
+static char		**empty_arr(void)
 {
-	char	**res;
+	char		**res;
 
 	res = (char **)malloc(sizeof(char *));
-//	res[0] = 0;
 	res[0] = NULL;
 	return (res);
 }
 
-char		**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	char	*str;
-	int		words_nb;
-	char	**arr;
+	char		*str;
+	int			words_nb;
+	char		**arr;
 
 	str = (char *)s;
 	arr = NULL;

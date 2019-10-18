@@ -6,15 +6,15 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:29:57 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 23:00:21 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:34:47 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *empty_string(void)
+static char			*empty_string(void)
 {
-	char *p;
+	char			*p;
 
 	p = (char *)malloc(sizeof(char));
 	if (!p)
@@ -24,7 +24,7 @@ static char *empty_string(void)
 }
 
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char				*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
 	char			*sub_str;

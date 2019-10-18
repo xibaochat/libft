@@ -6,11 +6,11 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:30:24 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:30:25 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:35:29 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int		ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c -= 32;

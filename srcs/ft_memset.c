@@ -6,7 +6,7 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:26:02 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:26:04 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:02:59 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void				*ft_memset(void *s, int c, size_t n)
 {
 	char			*str;
-	size_t	i;
+	size_t			i;
 
 	i = 0;
 	str = (char *)s;

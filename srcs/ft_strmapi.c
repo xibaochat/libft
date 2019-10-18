@@ -6,13 +6,13 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:28:45 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:28:46 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:21:22 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char				*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
 	char			*ptr;

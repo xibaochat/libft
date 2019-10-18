@@ -6,15 +6,15 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:29:43 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/18 02:43:01 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:34:03 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char *empty_string(void)
+static char	*empty_string(void)
 {
-	char *p;
+	char	*p;
 
 	p = (char *)malloc(sizeof(char));
 	if (!p)
@@ -23,9 +23,9 @@ static char *empty_string(void)
 	return (p);
 }
 
-int char_in_set(char c, char *set)
+start int	char_in_set(char c, char *set)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (set[i])
@@ -37,9 +37,9 @@ int char_in_set(char c, char *set)
 	return (0);
 }
 
-int get_starting_index(char *str, char *set)
+static int	get_starting_index(char *str, char *set)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (str[i])
@@ -51,9 +51,9 @@ int get_starting_index(char *str, char *set)
 	return (i);
 }
 
-int		get_end_start(char *str, char *set)
+static int	get_end_start(char *str, char *set)
 {
-	int lens;
+	int		lens;
 
 	lens = ft_strlen(str);
 	while (str[--lens])

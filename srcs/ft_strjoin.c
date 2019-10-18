@@ -6,15 +6,15 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:27:38 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:27:40 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:06:48 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*manage_empty_str(char *s1, char *s2)
+static char	*manage_empty_str(char *s1, char *s2)
 {
-	char *s;
+	char 	*s;
 
 	s = (char *)malloc(sizeof(char));
 	s[0] = '\0';

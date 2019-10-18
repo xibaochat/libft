@@ -6,14 +6,16 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:28:29 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:28:30 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:21:01 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *str)
+#include "libft.h"
+
+size_t		ft_strlen(char *str)
 {
-	int i;
-	int lens;
+	size_t	i;
+	size_t	lens;
 
 	i = -1;
 	lens = 0;

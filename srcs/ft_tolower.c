@@ -6,11 +6,11 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 18:30:08 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/17 18:30:13 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:35:05 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int		ft_tolower(int c)
 {
 	if (c >= 65 && c <= 90)
 		c += 32;

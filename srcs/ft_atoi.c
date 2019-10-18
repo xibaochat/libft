@@ -6,20 +6,20 @@
 /*   By: xwang <xwang@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 15:27:59 by xwang             #+#    #+#             */
-/*   Updated: 2019/10/17 15:28:28 by xwang            ###   ########.fr       */
+/*   Updated: 2019/10/18 03:43:28 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int is_space(char c)
+static int	is_space(char c)
 {
 	return ((c >= 9 && c <= 13) || c == ' ');
 }
 
-int	get_start_index(char *str)
+static int	get_start_index(char *str)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (str[i] && is_space(str[i]))
@@ -27,11 +27,11 @@ int	get_start_index(char *str)
 	return (i);
 }
 
-int  ft_atoi(char *str)
+int 		ft_atoi(char *str)
 {
-	int sign;
-	int res;
-	int i;
+	int		sign;
+	int		res;
+	int		i;
 
 	sign = 1;
 	res = 0;
