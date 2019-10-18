@@ -6,7 +6,7 @@
 #    By: xinwang <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/12 14:33:10 by xinwang           #+#    #+#              #
-#    Updated: 2019/10/18 13:17:38 by xinwang          ###   ########.fr        #
+#    Updated: 2019/10/18 15:52:58 by xinwang          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -51,8 +51,8 @@ FLAG = -Wall -Werror -Wextra
 
 $(NAME): all
 
-all: $(SRCO)
-		ar rc $(NAME) $(SRCO)
+all: $(SRCO) $(SRCO_BONUS)
+		ar rc $(NAME) $(SRCO) $(SRCO_BONUS)
 #		gcc -I $(HEADER_DIR) -c $(SRCO) $(FLAG)
 
 bonus: $(SRCO_BONUS)
