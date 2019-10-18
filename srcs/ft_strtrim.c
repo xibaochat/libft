@@ -6,24 +6,13 @@
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 04:43:28 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/18 04:45:52 by xinwang          ###   ########.fr       */
+/*   Updated: 2019/10/18 04:51:08 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static char *empty_string(void)
-{
-	char	*p;
-
-	p = (char *)malloc(sizeof(char));
-	if (!p)
-		return (NULL);
-	p[0] = '\0';
-	return (p);
-}
-
-static int	char_in_set(char c, char *set)
 {
 	char	*p;
 
