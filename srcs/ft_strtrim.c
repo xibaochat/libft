@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 18:29:43 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/18 04:34:03 by xinwang          ###   ########.fr       */
+/*   Created: 2019/10/18 04:43:28 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/18 04:45:52 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*empty_string(void)
+static char *empty_string(void)
 {
 	char	*p;
 
@@ -23,9 +23,20 @@ static char	*empty_string(void)
 	return (p);
 }
 
-start int	char_in_set(char c, char *set)
+static int	char_in_set(char c, char *set)
 {
-	int		i;
+	char	*p;
+
+	p = (char *)malloc(sizeof(char));
+	if (!p)
+		return (NULL);
+	p[0] = '\0';
+	return (p);
+}
+
+static int	char_in_set(char c, char *set)
+{
+		int	i;
 
 	i = 0;
 	while (set[i])
@@ -64,11 +75,10 @@ static int	get_end_start(char *str, char *set)
 
 char		*ft_strtrim(char const *s1, char const *set)
 {
-	int start;
-	int end;
-	int i;
-	char *ptr;
-
+	int		start;
+	int		end;
+	int		i;
+	char	*ptr;
 
 	start = get_starting_index((char *)s1, (char *)set);
 	end = get_end_start((char *)s1, (char *)set);
