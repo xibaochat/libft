@@ -6,7 +6,7 @@
 #    By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/19 19:12:56 by xinwang           #+#    #+#              #
-#    Updated: 2019/10/21 13:47:28 by xinwang          ###   ########.fr        #
+#    Updated: 2019/10/21 14:01:38 by xinwang          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -69,8 +69,7 @@ SRC_BONUS_NAME = ft_lstadd_back.c	\
 				ft_lstnew.c			\
 				ft_lstsize.c		\
 
-SRC_BONUS_PATH = ./srcs_bonus/
-SRCS_BONUS =$(addprefix $(SRC_BONUS_PATH),$(SRC_BONUS_NAME))
+SRCS_BONUS =$(addprefix $(SRC_PATH),$(SRC_BONUS_NAME))
 SRCSO_BONUS =$(SRC_BONUS_NAME:.c=.o)
 
 # HEADER DIR
@@ -89,8 +88,8 @@ $(NAME): all
 
 all: nyancat
 	@echo "Libft Compilation" $(F_STATUS_0)
-	@ $(CC) $(CC_FLAGS) -c  $(SRCS) -I $(HEADER)
-	@ ar rcs $(NAME) $(SRCO)
+	@ $(CC) $(CC_FLAGS) -c  $(SRCS) ${SRCS_BONUS} -I $(HEADER)
+	@ ar rcs $(NAME) $(SRCO) ${SRCSO_BONUS}
 	@$(F_STATUS_1)
 
 bonus: nyancat
