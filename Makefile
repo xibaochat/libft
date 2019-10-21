@@ -19,15 +19,15 @@ GREEN       = \033[33;32m
 YELLOW      = \033[33;33m
 RED         = \033[33;31m
 WHITE       = \033[33;37m
-MAGENTA	 	= \e[95m
+MAGENTA	 	= \033[33;95m
 
-ARC_RED		= \e[41m
-ARC_ORANGE	= \e[101m
-ARC_YELLOW	= \e[43m
-ARC_GREEN	= \e[102m
-ARC_BLUE	= \e[44m
-ARC_MAGENTA	= \e[45m
-ARC_NC		= \e[49m
+ARC_RED		= \033[33;41m
+ARC_ORANGE	= \033[33;101m
+ARC_YELLOW	= \033[33;43m
+ARC_GREEN	= \033[33;102m
+ARC_BLUE	= \033[33;44m
+ARC_MAGENTA	= \033[33;45m
+ARC_NC		= \033[0m
 
 F_STATUS_0 = | xargs sh -c 'printf "$(GREEN)喜$(YELLOW)喜$(RED)喜 $(WHITE)$$0 $$1:    \t"'
 F_STATUS_1 = echo "$(GREEN)DONE 喜$(YELLOW)喜$(RED)喜"
@@ -117,12 +117,12 @@ nyancat:
 	@ echo "          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄         "
 	@ echo "        ▄▀░░░░░░░░░░░░▄░░░░░░░▀▄       "
 	@ echo "        █░░▄░░░░▄░░░░░░░░░░░░░░█       "
-	@ echo "$(ARC_RED)        $(ARC_NC)█░░░░░░░░░░░░▄█▄▄░░▄░░░█ ▄▄▄   "
-	@ echo "$(ARC_ORANGE) ▄▄▄▄▄  $(ARC_NC)█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██  "
-	@ echo "$(ARC_YELLOW) $(ARC_NC)██▄▀██$(ARC_YELLOW)▄$(ARC_NC)█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██  "
-	@ echo "$(ARC_GREEN)  ▀$(ARC_NC)██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██ "
-	@ echo "$(ARC_BLUE)    ▀$(ARC_NC)████░▀░░░░▄░░░██░░░$(GREEN)▄█$(MAGENTA)░░░░▄░$(GREEN)▄█$(MAGENTA)░░██ "
-	@ echo "$(ARGC_MAGENTA)       ▀$(ARC_NC)█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██ "
+	@ echo "$(ARC_RED)        $(ARC_NC)$(MAGENTA)█░░░░░░░░░░░░▄█▄▄░░▄░░░█ ▄▄▄   "
+	@ echo "$(ARC_ORANGE) ▄▄▄▄▄  $(ARC_NC)$(MAGENTA)█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██  "
+	@ echo "$(ARC_YELLOW) $(ARC_NC)$(MAGENTA)██▄▀██$(ARC_YELLOW)▄$(ARC_NC)$(MAGENTA)█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██  "
+	@ echo "$(ARC_GREEN)  ▀$(ARC_NC)$(MAGENTA)██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██ "
+	@ echo "$(ARC_BLUE)    ▀$(ARC_NC)$(MAGENTA)████░▀░░░░▄░░░██░░░$(GREEN)▄█$(MAGENTA)░░░░▄░$(GREEN)▄█$(MAGENTA)░░██ "
+	@ echo "$(ARGC_MAGENTA)       ▀$(ARC_NC)$(MAGENTA)█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██ "
 	@ echo "       ▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀  "
 	@ echo "      █▀▀█████████▀▀▀▀████████████▀    "
 	@ echo "      ████▀   ███▀      ▀███  ▀██▀     "
