@@ -6,7 +6,7 @@
 #    By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/19 19:12:56 by xinwang           #+#    #+#              #
-#    Updated: 2019/10/19 21:53:51 by xinwang          ###   ########.fr        #
+#    Updated: 2019/10/21 13:47:28 by xinwang          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -28,6 +28,9 @@ ARC_GREEN	= \e[102m
 ARC_BLUE	= \e[44m
 ARC_MAGENTA	= \e[45m
 ARC_NC		= \e[49m
+
+F_STATUS_0 = | xargs sh -c 'printf "$(GREEN)喜$(YELLOW)喜$(RED)喜 $(WHITE)$$0 $$1:    \t"'
+F_STATUS_1 = echo "$(GREEN)DONE 喜$(YELLOW)喜$(RED)喜"
 
 
 ####################
@@ -51,6 +54,7 @@ SRC_NAME = ft_atoi.c         ft_split.c \
 			ft_putnbr_fd.c   ft_tolower.c \
 			ft_putstr_fd.c   ft_toupper.c \
 			ft_strrchr.c
+
 SRC_PATH = ./srcs/
 SRCS = $(addprefix $(SRC_PATH),$(SRC_NAME))
 SRCO = $(SRC_NAME:.c=.o)
@@ -81,43 +85,45 @@ CC_FLAGS = -Wall -Werror -Wextra
 # RULES #
 #########
 
+$(NAME): all
+
 all: nyancat
-	@printf "$(GREEN)喜$(YELLOW)喜$(RED)喜 $(WHITE)Libft Compilation   ~>\t"
-	@ ${CC} ${CC_FLAGS} -c  ${SRCS} -I ${HEADER}
-	@ ar rcs ${NAME} ${SRCO}
-	@echo "$(GREEN)DONE 喜$(YELLOW)喜$(RED)喜"
+	@echo "Libft Compilation" $(F_STATUS_0)
+	@ $(CC) $(CC_FLAGS) -c  $(SRCS) -I $(HEADER)
+	@ ar rcs $(NAME) $(SRCO)
+	@$(F_STATUS_1)
 
 bonus: nyancat
-	@printf "$(GREEN)喜$(YELLOW)喜$(RED)喜 $(WHITE)Bonus Compilation   ~>\t"
-	@ ${CC} ${CC_FLAGS} -c ${SRCS_BONUS} ${SRCS} -I ${HEADER}
-	@ ar rcs ${NAME} ${SRCSO_BONUS}
-	@echo "$(GREEN)DONE 喜$(YELLOW)喜$(RED)喜"
+	@echo "Bonus Compilation" $(F_STATUS_0)
+	@ $(CC) $(CC_FLAGS) -c $(SRCS_BONUS) -I $(HEADER)
+	@ ar rcs $(NAME) $(SRCSO_BONUS)
+	@$(F_STATUS_1)
 
 clean:
-	@printf "$(GREEN)喜$(YELLOW)喜$(RED)喜 $(WHITE)Clean\t\t   ~>\t"
-	@ rm -f ${SRCO} ${SRCSO_BONUS}
+	@echo "Clean" $(F_STATUS_0)
+	@ rm -f $(SRCO) $(SRCSO_BONUS)
 	@ find . -name '*~' -delete
-	@echo "$(GREEN)DONE 喜$(YELLOW)喜$(RED)喜"
+	@$(F_STATUS_1)
 
 fclean: clean
-	@printf "$(GREEN)喜$(YELLOW)喜$(RED)喜 $(WHITE)F-Clean\t\t   ~>\t"
-	@ rm -f ${NAME}
-	@echo "$(GREEN)DONE 喜$(YELLOW)喜$(RED)喜"
+	@echo "F-Clean" $(F_STATUS_0)
+	@ rm -f $(NAME)
+	@$(F_STATUS_1)
 
 re: fclean all
 
 nyancat:
-	@ echo "${MAGENTA}                             "
+	@ echo "$(MAGENTA)                             "
 	@ clear
 	@ echo "          ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄         "
 	@ echo "        ▄▀░░░░░░░░░░░░▄░░░░░░░▀▄       "
 	@ echo "        █░░▄░░░░▄░░░░░░░░░░░░░░█       "
-	@ echo "${ARC_RED}        ${ARC_NC}█░░░░░░░░░░░░▄█▄▄░░▄░░░█ ▄▄▄   "
-	@ echo "${ARC_ORANGE} ▄▄▄▄▄  ${ARC_NC}█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██  "
-	@ echo "${ARC_YELLOW} ${ARC_NC}██▄▀██${ARC_YELLOW}▄${ARC_NC}█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██  "
-	@ echo "${ARC_GREEN}  ▀${ARC_NC}██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██ "
-	@ echo "${ARC_BLUE}    ▀${ARC_NC}████░▀░░░░▄░░░██░░░${GREEN}▄█${MAGENTA}░░░░▄░${GREEN}▄█${MAGENTA}░░██ "
-	@ echo "${ARGC_MAGENTA}       ▀${ARC_NC}█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██ "
+	@ echo "$(ARC_RED)        $(ARC_NC)█░░░░░░░░░░░░▄█▄▄░░▄░░░█ ▄▄▄   "
+	@ echo "$(ARC_ORANGE) ▄▄▄▄▄  $(ARC_NC)█░░░░░░▀░░░░▀█░░▀▄░░░░░█▀▀░██  "
+	@ echo "$(ARC_YELLOW) $(ARC_NC)██▄▀██$(ARC_YELLOW)▄$(ARC_NC)█░░░▄░░░░░░░██░░░░▀▀▀▀▀░░░░██  "
+	@ echo "$(ARC_GREEN)  ▀$(ARC_NC)██▄▀██░░░░░░░░▀░██▀░░░░░░░░░░░░░▀██ "
+	@ echo "$(ARC_BLUE)    ▀$(ARC_NC)████░▀░░░░▄░░░██░░░$(GREEN)▄█$(MAGENTA)░░░░▄░$(GREEN)▄█$(MAGENTA)░░██ "
+	@ echo "$(ARGC_MAGENTA)       ▀$(ARC_NC)█░░░░▄░░░░░██░░░░▄░░░▄░░▄░░░██ "
 	@ echo "       ▄█▄░░░░░░░░░░░▀▄░░▀▀▀▀▀▀▀▀░░▄▀  "
 	@ echo "      █▀▀█████████▀▀▀▀████████████▀    "
 	@ echo "      ████▀   ███▀      ▀███  ▀██▀     "
