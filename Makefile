@@ -10,6 +10,8 @@
 #                                                                              #
 #******************************************************************************#
 
+.SILENT:
+
 NAME = libft.a
 
 SRCS = ft_atoi.c         ft_split.c \
@@ -25,8 +27,7 @@ SRCS = ft_atoi.c         ft_split.c \
 		ft_putchar_fd.c  ft_strtrim.c \
 		ft_putendl_fd.c  ft_substr.c \
 		ft_putnbr_fd.c   ft_tolower.c \
-		ft_putstr_fd.c   ft_toupper.c \
-		ft_strrchr.c
+		ft_putstr_fd.c   ft_toupper.c ft_strrchr.c
 
 SRCO = $(SRCS:.c=.o)
 
@@ -43,25 +44,24 @@ SRCS_BONUS = ft_lstadd_back.c	\
 SRCSO_BONUS =$(SRCS_BONUS:.c=.o)
 
 
-CC = /usr/bin/gcc
+CC = gcc
 CC_FLAGS = -Wall -Werror -Wextra
 
 
-$(NAME): all
+all: $(NAME)
 
-all:
-	@ $(CC) $(CC_FLAGS) -c  $(SRCS) ${SRCS_BONUS}
-	@ /usr/bin/ar rcs $(NAME) $(SRCO) ${SRCSO_BONUS}
+$(NAME): $(SRCO)
+		$(CC) $(CC_FLAGS) -c  $(SRCS)
+		ar rcs $(NAME) $(SRCO)
 
-bonus:
-	@ $(CC) $(CC_FLAGS) -c $(SRCS_BONUS)
-	@ ar rcs $(NAME) $(SRCSO_BONUS)
+bonus: ${SRCSO_BONUS} $(SRCO)
+		$(CC) $(CC_FLAGS) -c $(SRCS_BONUS) $(SRCS)
+		ar rcs $(NAME) $(SRCSO_BONUS)
 
 clean:
-	@ rm -f $(SRCO) $(SRCSO_BONUS)
-	@ find . -name '*~' -delete
+		 rm -f $(SRCO) $(SRCSO_BONUS)
 
 fclean: clean
-	@ rm -f $(NAME)
+		rm -f $(NAME)
 
 re: fclean all
