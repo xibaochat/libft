@@ -69,6 +69,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*ptr;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = get_starting_index((char *)s1, (char *)set);
 	end = get_end_start((char *)s1, (char *)set);
 	if (!(ptr = (char *)malloc(sizeof(char) * (end - start + 2))))

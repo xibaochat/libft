@@ -30,6 +30,8 @@ char			*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	str = (char *)s;
 	if (start >= (unsigned int)ft_strlen(str))
 		return (empty_string());
