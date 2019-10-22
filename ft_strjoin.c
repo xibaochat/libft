@@ -12,19 +12,6 @@
 
 #include "libft.h"
 
-static char	*manage_empty_str(char *s1, char *s2)
-{
-	char	*s;
-
-	s = (char *)malloc(sizeof(char));
-	s[0] = '\0';
-	if (s1 && !s2)
-		return (s1);
-	if (!s1 && s2)
-		return (s2);
-	return (s);
-}
-
 char		*ft_strjoin(char const *s1, char const *s2)
 {
 	int		total_lens;
@@ -34,8 +21,10 @@ char		*ft_strjoin(char const *s1, char const *s2)
 
 	i = -1;
 	j = -1;
-	if (!(char *)s1 || !(char *)s2)
-		return (manage_empty_str((char *)s1, (char *)s2));
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1 || !s2)
+		return ((!s1) ? ft_strdup(s2) : ft_strdup(s2));
 	total_lens = ft_strlen((char *)s1) + ft_strlen((char *)s2);
 	str = (char *)malloc((total_lens + 1) * sizeof(char));
 	if (!str)
