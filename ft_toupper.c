@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 18:28:29 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/18 04:21:01 by xinwang          ###   ########.fr       */
+/*   Created: 2019/10/17 18:30:24 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/22 16:47:23 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t		ft_strlen(char *str)
+int		ft_toupper(int c)
 {
-	size_t	i;
-	size_t	lens;
-
-	i = -1;
-	lens = 0;
-	while (str[++i])
-		lens++;
-	return (lens);
+	if (c >= 97 && c <= 122)
+		c = c - 32;
+	return (c);
 }

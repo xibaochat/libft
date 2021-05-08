@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xinwang <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: xinwang <xinwang@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 11:50:33 by xinwang           #+#    #+#             */
-/*   Updated: 2019/10/18 11:50:35 by xinwang          ###   ########.fr       */
+/*   Created: 2019/10/17 18:28:29 by xinwang           #+#    #+#             */
+/*   Updated: 2019/10/18 04:21:01 by xinwang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_lstdelone(t_list *lst, void (*del)(void *))
+size_t		ft_strlen(const char *str)
 {
-	if (!lst || !del)
-		return ;
-	(*del)(lst->content);
-	lst->next = NULL;
-	free(lst);
-	lst = NULL;
+	size_t	i;
+	size_t	lens;
+
+	i = -1;
+	lens = 0;
+	while (str[++i])
+		lens++;
+	return (lens);
 }
